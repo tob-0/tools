@@ -1,0 +1,47 @@
+#!/bin/bash
+
+case $1 in
+
+	sad)
+	echo "( ͡° ʖ̯ ͡°)" | xclip -i -selection clipboard
+	;;	
+	classic)
+	echo "( ͡° ͜ʖ ͡°)" | xclip -i -selection clipboard
+	;;	
+	que)
+	echo "( ͠° ͟ʖ ͡°)" | xclip -i -selection clipboard
+	;;	
+	wink)
+	echo "( ͡~ ͜ʖ ͡°)" | xclip -i -selection clipboard
+	;;	
+	wat)
+	echo "( ͡ʘ ͜ʖ ͡ʘ)" | xclip -i -selection clipboard
+	;;	
+	tableflip)
+	echo "(╯ ͠° ͟ʖ ͡°)╯┻━┻" | xclip -i -selection clipboard
+	;;	
+	shrug)
+	echo "¯\\_( ͡° ͜ʖ ͡°)_/¯" | xclip -i -selection clipboard
+	;;	
+	fuck)
+	echo "( ͡° ͜ʖ ͡°)╭∩╮" | xclip -i -selection clipboard
+	;;	
+	gang)
+	echo "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)" | xclip -i -selection clipboard
+	;;	
+	bagarre)
+	echo "(ง ͠° ͟ل͜ ͡°)ง" | xclip -i -selection clipboard
+	;;	
+	mmm)
+	echo "( ಠ ͜ʖಠ)" | xclip -i -selection clipboard
+	;;	
+	cool)
+	echo "(▀̿Ĺ̯▀̿ ̿)" | xclip -i -selection clipboard
+	;;
+	strong)
+	echo "ᕦ( ͡° ͜ʖ ͡°)ᕤ" | xclip -i -selection clipboard
+	;;
+	*)
+	echo "( ͡° ͜ʖ ͡°)" | xclip -i -selection clipboard
+	;;
+esac	

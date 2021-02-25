@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "#ginit auto-creation">README.MD
+git init
+git add README.MD
+git commit -m "Auto Creation & 1st Commit by ginit"
+git branch -M main
+git remote add origin "$1"
+git push -u origin main
