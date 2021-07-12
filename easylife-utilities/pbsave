@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ ! -e ~/Documents/Pastebins ]
+then
+    echo "Creating ~/Documents/Pastebins..."
+    mkdir -p ~/Documents/Pastebins
+fi
+
+cd ~/Documents/Pastebins > /dev/null
+if [ $# -ge 1 ]
+then
+    wget -q https://pastebin.com/raw/$1
+    echo "Paste saved to /home/tob/Documents/Pastebins/$1"
+else
+    echo "Usage: savepb <paste_ID>"
+fi
+cd - > /dev/null 

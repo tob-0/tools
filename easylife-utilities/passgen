@@ -1,0 +1,45 @@
+#!/bin/bash
+
+CHARSET_0='a-z'
+CHARSET_1='a-zA-Z'
+CHARSET_2='a-zA-Z0-9'
+CHARSET_3='a-zA-Z0-9!%$:;/.<>_-'
+PASS_TABLE="$HOME/.file_pass.csv"
+
+
+
+if [ $# -eq 0 ]
+then
+    echo "Usage: $0 <size> <difficulty from 0 to 3> <save to file {yes | no} [site] [username]>"
+    exit 0
+fi
+
+case $2 in
+    0) CHARSET_USED=$CHARSET_0;;
+    1) CHARSET_USED=$CHARSET_1;;
+    2) CHARSET_USED=$CHARSET_2;;
+    3) CHARSET_USED=$CHARSET_3;;
+esac
+
+if [ "$2" == "0" ] || [ "$2" == "1" ] || [ "$2" == "2" ] || [ "$2" == "3" ]
+then
+    GENERATED=$(cat /dev/urandom | env LC_CTYPE=C tr -dc $CHARSET_USED | fold -w "$1" | head -n 1 )
+fi
+
+if [ ! "$3" == "" ]
+then
+    if [ "$(echo "$3" | tr '[:upper:]' '[:lower:]')" == "yes" ]
+    then
+        if [ "$4" == "" ] || [ "$5" == "" ]
+        then
+            echo "Error: You must enter a website and a username."
+        else
+            WEBSITE=$4
+            USER_NAME=$5
+        fi
+        printf "%s\n" "$WEBSITE" "$USER_NAME" "$GENERATED" | paste -sd "," >> "$PASS_TABLE"
+        echo "$GENERATED"
+        else 
+            echo "$GENERATED"
+            exit 0
+        f
